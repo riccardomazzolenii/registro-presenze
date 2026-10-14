@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scarica Registro Presenze — A.R.M.R.</title>
+  <meta name="description" content="Scarica l'app Registro Presenze Eventi di A.R.M.R. per Windows, Mac, Android, iPhone e iPad." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="logo.png" />
+  <style>
+    :root {
+      --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --text-2: #6e6e73; --line: #e5e5ea;
+      --accent: #2f2a7a; --accent-text: #ffffff; --green: #2e7d32;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #000000; --card: #1c1c1e; --text: #f5f5f7; --text-2: #a1a1a6; --line: #2c2c2e; --accent: #7d78e0; --accent-text: #0b0b1a; --green: #66bb6a; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+    header { text-align: center; margin-bottom: 32px; }
+    header img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+    h1 { font-size: clamp(28px, 6vw, 38px); margin: 18px 0 6px; letter-spacing: -0.02em; }
+    header p { margin: 0; color: var(--text-2); }
+    .main-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding: 14px 26px; border-radius: 999px; background: var(--accent); color: var(--accent-text); font-weight: 700; font-size: 17px; text-decoration: none; }
+    .main-btn small { font-weight: 500; opacity: .8; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 36px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .card.current { outline: 2px solid var(--accent); }
+    .card h2 { font-size: 18px; margin: 0; }
+    .card p { margin: 0; color: var(--text-2); font-size: 14px; flex: 1; }
+    .card a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin-top: 12px; }
+    summary { cursor: pointer; font-weight: 600; }
+    details ol { padding-left: 20px; margin: 10px 0 2px; color: var(--text-2); }
+    h3 { margin: 40px 0 4px; font-size: 18px; }
+    footer { text-align: center; color: var(--text-2); font-size: 13px; margin-top: 40px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="logo.png" alt="" />
+    <h1>Registro Presenze</h1>
+    <p>Registro presenze, scanner QR e badge per gli eventi A.R.M.R.<br />Accesso con l'account fornito dall'associazione.</p>
+    <a id="main" class="main-btn" href="#piattaforme">Scegli la tua piattaforma</a>
+  </header>
+
+  <section class="grid" id="piattaforme">
+    <div class="card" data-os="windows">
+      <h2>Windows</h2>
+      <p>Windows 10 e 11 (64 bit). Installer con collegamento sul desktop e nel menu Start.</p>
+      <a href="https://github.com/riccardomazzolenii/registro-presenze/releases/latest/download/Registro-Presenze-Windows-Setup.exe" download>Scarica per Windows (107 MB)</a>
+    </div>
+    <div class="card" data-os="mac">
+      <h2>Mac</h2>
+      <p>macOS 26.5 o successivo. Apri il file e trascina l'app in Applicazioni.</p>
+      <a href="https://github.com/riccardomazzolenii/registro-presenze/releases/latest/download/Registro-Presenze-macOS.dmg" download>Scarica per Mac (5 MB)</a>
+    </div>
+    <div class="card" data-os="ios">
+      <h2>iPhone e iPad</h2>
+      <p>iOS e iPadOS 26.5 o successivo. Si installa dall'App Store o da TestFlight.</p>
+      <a id="ios-link" href="#ios">Installa su iPhone o iPad</a>
+    </div>
+    <div class="card" data-os="android">
+      <h2>Android</h2>
+      <p>Android 7 o successivo, con Google Chrome. App con icona, scanner QR e accesso con Google.</p>
+      <a href="https://github.com/riccardomazzolenii/registro-presenze/releases/latest/download/Registro-Presenze-Android.apk" download>Scarica per Android (0,5 MB)</a>
+    </div>
+    <div class="card" data-os="web">
+      <h2>Browser</h2>
+      <p>Funziona in Chrome, Edge, Safari e Firefox, senza installare nulla.</p>
+      <a id="web-link" href="#web">Apri la versione web</a>
+    </div>
+  </section>
+
+  <h3>Istruzioni</h3>
+  <details id="help-windows">
+    <summary>Installare su Windows</summary>
+    <ol>
+      <li>Apri il file <b>Registro-Presenze-Windows-Setup.exe</b> scaricato.</li>
+      <li>Se compare «Windows ha protetto il PC», premi <b>Ulteriori informazioni › Esegui comunque</b>.</li>
+      <li>Segui l'installazione, poi apri <b>Registro Presenze</b> dal desktop o dal menu Start e accedi con email e password.</li>
+    </ol>
+  </details>
+  <details id="help-mac">
+    <summary>Installare su Mac</summary>
+    <ol>
+      <li>Apri <b>Registro-Presenze-macOS.dmg</b> e trascina l'app nella cartella <b>Applicazioni</b>.</li>
+      <li>Al primo avvio, se il Mac avvisa che non può verificare lo sviluppatore, apri <b>Impostazioni di Sistema › Privacy e sicurezza</b> e premi <b>Apri comunque</b>.</li>
+      <li>Accedi con email e password.</li>
+    </ol>
+  </details>
+  <details id="help-android">
+    <summary>Installare su Android</summary>
+    <ol>
+      <li>Tocca «Scarica per Android» da questo telefono e apri il file <b>Registro-Presenze-Android.apk</b>.</li>
+      <li>Se Android chiede di consentire l'installazione da questa fonte, tocca <b>Impostazioni</b>, attiva <b>Consenti da questa fonte</b> e torna indietro.</li>
+      <li>Tocca <b>Installa</b> (se Play Protect avvisa che l'app è sconosciuta, scegli <b>Installa comunque</b>), poi apri <b>Registro Presenze</b> e accedi.</li>
+    </ol>
+  </details>
+  <details id="help-ios">
+    <summary>Installare su iPhone e iPad</summary>
+    <ol>
+      <li>Tocca «Installa su iPhone o iPad» da questo dispositivo.</li>
+      <li>Si apre l'App Store (o TestFlight): tocca <b>Ottieni</b> / <b>Installa</b>.</li>
+      <li>Apri <b>Presenze</b> e accedi con email e password.</li>
+    </ol>
+  </details>
+
+  <footer>© A.R.M.R. · Lo stesso registro, sincronizzato in tempo reale su tutti i dispositivi.</footer>
+</main>
+
+<script>
+  // Da compilare quando i link sono disponibili.
+  const IOS_URL = "";  // link App Store o invito pubblico TestFlight
+  const WEB_URL = "https://armr-presenze.web.app";  // web app pubblicata su Firebase Hosting
+
+  if (IOS_URL) document.getElementById("ios-link").href = IOS_URL;
+  else document.getElementById("ios-link").replaceWith(Object.assign(document.createElement("span"), { textContent: "Disponibile a breve", style: "color:var(--text-2);font-weight:600" }));
+  if (WEB_URL) document.getElementById("web-link").href = WEB_URL;
+  else document.querySelector('[data-os="web"]').remove();
+
+  const ua = navigator.userAgent;
+  const iPadOS = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+  const os = /iPhone|iPad|iPod/.test(ua) || iPadOS ? "ios" : /Android/.test(ua) ? "android" : /Windows/.test(ua) ? "windows" : /Macintosh/.test(ua) ? "mac" : null;
+
+  const card = os && document.querySelector(`[data-os="${os}"]`);
+  const link = card && card.querySelector("a");
+  if (link) {
+    card.classList.add("current");
+    const main = document.getElementById("main");
+    main.href = link.href;
+    if (link.hasAttribute("download")) main.setAttribute("download", "");
+    main.innerHTML = `${link.textContent}`;
+    const help = document.getElementById(`help-${os}`);
+    if (help) help.open = true;
+  }
+</script>
+</body>
+</html>
